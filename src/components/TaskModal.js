@@ -1,6 +1,8 @@
 
 import React from "react";
-import { Modal, TextField, Button, Box } from "@mui/material";
+import { Modal, TextField, Button, Box, IconButton } from "@mui/material";
+import UploadIcon from "@mui/icons-material/Upload";
+import { Delete } from "@mui/icons-material";
 
 const TaskModal = ({
   open,
@@ -80,12 +82,12 @@ const TaskModal = ({
                 {file ? file.name : "Upload PDF"}
               </Button>
               {file && (
-                <button
+                <IconButton
                   sx={{ paddingTop: 4 }}
                   onClick={() => handleFileChange({ target: { files: [] } })}
                 >
-                  Delete
-                </button>
+                  <Delete color="error" />
+                </IconButton>
               )}
             </label>
           </>
@@ -100,4 +102,5 @@ const TaskModal = ({
     </Modal>
   );
 };
+
 export default TaskModal;

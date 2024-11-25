@@ -4,6 +4,8 @@ import { Box, Typography } from "@mui/material";
 import axios from "axios";
 import TaskTable from "./TaskTable";
 import TaskModal from "./TaskModal";
+import { Fab } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
 
 export const TaskManager = () => {
   const [tasks, setTasks] = useState([]);
@@ -149,7 +151,10 @@ export const TaskManager = () => {
         file={file}
         isEditing={isEditing}
       />
-      <button
+
+<Fab
+        aria-label="add"
+        color="primary"
         onClick={handleAddClick}
         style={{
           position: "absolute",
@@ -157,8 +162,8 @@ export const TaskManager = () => {
           right: 16,
         }}
       >
-        Add Task
-      </button>
+        <AddIcon />
+</Fab>
     </div>
   );
 };
