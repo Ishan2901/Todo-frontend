@@ -59,7 +59,7 @@ export const TaskManager = () => {
         formData.append("description", taskData.description);
         formData.append("deadline", taskData.deadline);
         formData.append("status", taskData.status);
-        //if (file) formData.append("pdf", file);
+        if (file) formData.append("pdf", file);
         await axios.post("http://localhost:8082/tasks", formData);
       }
       const response = await axios.get("http://localhost:8082/tasks");
